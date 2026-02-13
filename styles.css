@@ -44,6 +44,26 @@ img{max-width:100%;height:auto;display:block}
   z-index:9999;
 }
 
+.share-btn{
+  appearance:none;
+  background:none;
+  border:1px solid transparent;
+  padding:8px;
+  border-radius:12px;
+  color:var(--muted);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.share-btn:hover{
+  color:var(--text);
+  border-color:var(--line);
+  background:#fff;
+}
+
+
 .header{
   position:sticky;
   top:0;
