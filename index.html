@@ -36,6 +36,38 @@
       </div>
 
       <nav class="nav" aria-label="Primary">
+      <!----- Share script ----->
+<script>
+  (function(){
+    const btn = document.getElementById('shareBtn');
+    const toast = document.getElementById('toast');
+    if (!btn) return;
+
+    const cleanUrl = window.location.origin + window.location.pathname;
+
+    btn.addEventListener('click', async () => {
+      try{
+        if (navigator.share) {
+          await navigator.share({
+            title: document.title,
+            text: 'EV charging map and local guide.',
+            url: cleanUrl
+          });
+        } else if (navigator.clipboard) {
+          await navigator.clipboard.writeText(cleanUrl);
+          showToast();
+        }
+      } catch(e){}
+    });
+
+    function showToast(){
+      if(!toast) return;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1500);
+    }
+  })();
+</script>
+        
         <a href="#map">Map</a>
         <a href="#about">About</a>
       </nav>
@@ -116,5 +148,11 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    Link copied
+  </div>
+
+  
 </body>
 </html>
