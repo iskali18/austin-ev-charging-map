@@ -1,38 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0S8ZHF54ET"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S8ZHF54ET"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0S8ZHF54ET');
+  </script>
 
-  gtag('config', 'G-0S8ZHF54ET');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austin EV Charging Stations – Live Map 2026</title>
-    <meta name="description" content="Real-time map of all public EV charging stations in Austin, Texas – Tesla Superchargers, Electrify America, ChargePoint, EVgo and more.">
-    <style>
-        body { margin:0; padding:20px; font-family:system-ui,Arial,sans-serif; background:#0f172a; color:#e2e8f0; }
-        h1 { text-align:center; color:#60a5fa; margin-bottom:8px; }
-        p { text-align:center; margin-bottom:30px; }
-        .map-container { width:100%; height:85vh; border:none; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.5); }
-        footer { text-align:center; margin-top:30px; font-size:0.9em; color:#94a3b8; }
-        a { color:#60a5fa; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>EV Charging in Austin, TX | Live PlugShare Map</title>
+  <meta name="description" content="A professional guide to EV charging in Austin, Texas — including a live PlugShare map and practical local considerations." />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EV Charging in Austin, TX" />
+  <meta property="og:description" content="Live EV charging map for Austin, Texas." />
+  <meta property="og:type" content="website" />
 </head>
+
 <body>
-    <h1>Austin EV Charging Stations</h1>
-    <p>Live Map 2026 – Real-time status for all networks</p>
-    
-    <iframe class="map-container" 
-            src="https://www.plugshare.com/widget2.html?latitude=30.2672&longitude=-97.7431&zoom=11&hidden=power,plug_type,network,restrictions&default_plugs=J1772,Tesla,CHAdeMO,CCS-COMBO,NEMA520,NEMA1450" 
-            frameborder="0" allowfullscreen>
-    </iframe>
-    
-    <footer>
-        Map powered by <a href="https://www.plugshare.com/">PlugShare</a> — the most complete EV charging database<br>
-    </footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a class="brand-link" href="/">AustinEVCharging.com</a>
+        <small class="brand-sub">EV charging map • Austin metro</small>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#map">Map</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1>EV Charging in Austin</h1>
+
+        <p class="lede">
+          EV charging infrastructure across the Austin area continues to expand, supporting daily commuting and regional travel throughout Central Texas.
+          This page provides a live overview of public charging locations and connector types using PlugShare’s embedded map.
+        </p>
+
+        <div class="hero-meta" aria-label="Site status">
+          <span class="badge">Live map</span>
+          <span class="muted">Additional pages coming soon</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="map">
+      <div class="container">
+        <div class="section-head">
+          <h2>Public EV Charging Locations</h2>
+          <p class="muted">
+            Explore public charging options across Austin using the embedded PlugShare map below.
+          </p>
+        </div>
+
+        <div class="map-card" role="region" aria-label="PlugShare map embed">
+          <iframe
+            title="PlugShare EV charging map - Austin, Texas"
+            src="https://www.plugshare.com/widget2.html?latitude=30.2672&longitude=-97.7431&zoom=11&hidden=power,plug_type,network,restrictions&default_plugs=J1772,Tesla,CHAdeMO,CCS-COMBO,NEMA520,NEMA1450"
+            loading="lazy"
+            allow="geolocation"
+            style="width:100%; height:600px; border:0;">
+          </iframe>
+
+          <div class="map-footer">
+            <p class="muted small">
+              Prefer full screen? <a class="inline-link" href="https://www.plugshare.com/" target="_blank" rel="noopener noreferrer">Open PlugShare</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>About This Resource</h2>
+        </div>
+
+        <div class="card">
+          <p>
+            AustinEVCharging.com is an independent informational resource focused on EV charging across Austin and nearby communities.
+            Charger availability, pricing, and site access details can change and should be confirmed through the original listing or network provider.
+          </p>
+          <p class="muted small">
+            This site provides general informational content only and does not offer electrical contracting services or professional engineering advice.
+            For installation, permitting, or code compliance guidance, consult a licensed electrician and the appropriate local jurisdiction.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="small muted">© <span id="year"></span> AustinEVCharging.com • Informational resource</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
