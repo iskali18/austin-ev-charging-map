@@ -150,6 +150,10 @@ h2, h3{
   letter-spacing:-0.2px;
 }
 
+.section-head p{
+  margin:0;
+}
+
 .card, .map-card{
   background:#fff;
   border:1px solid var(--line);
