@@ -44,23 +44,29 @@ img{max-width:100%;height:auto;display:block}
   z-index:9999;
 }
 
-.share-btn{
+.nav .share-btn{
   appearance:none;
   background:none;
   border:1px solid transparent;
   padding:8px;
   border-radius:12px;
-  color:var(--muted);
+  color:#475569;              /* darker than muted text */
   cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
+  transition:all .2s ease;
 }
 
-.share-btn:hover{
-  color:var(--text);
+.nav .share-btn svg{
+  width:22px;
+  height:22px;
+}
+
+.nav .share-btn:hover{
+  color:#0f172a;
   border-color:var(--line);
-  background:#fff;
+  background:#f8fafc;
 }
 
 .toast{
@@ -121,8 +127,10 @@ img{max-width:100%;height:auto;display:block}
 
 .nav{
   display:flex;
+  align-items:center;
   gap:14px;
 }
+
 .nav a{
   text-decoration:none;
   padding:8px 10px;
@@ -137,7 +145,7 @@ img{max-width:100%;height:auto;display:block}
 }
 
 .hero{
-  padding:44px 0 26px;
+  padding:26px 0 26px;
 }
 
 .hero h1{
@@ -148,11 +156,6 @@ img{max-width:100%;height:auto;display:block}
   letter-spacing: 0.3px;               /* slight positive spacing */
   margin-bottom: 8px;
 }
-
-
-
-
-
 
 h2, h3{
   font-family: 'Inter', sans-serif;
@@ -166,11 +169,16 @@ h2, h3{
   max-width:none;
 }
 .hero-meta{
-  margin-top:16px;
+  margin-top:12px;
   display:flex;
-  gap:10px;
+  gap:8px;
   align-items:center;
 }
+
+.hero-meta .muted{
+  font-size:13px;
+}
+
 .badge{
   display:inline-flex;
   align-items:center;
@@ -183,15 +191,19 @@ h2, h3{
 }
 
 .section{
-  padding:26px 0 38px;
+  padding:20px 0 38px;
 }
 .section-head{
   margin-bottom:14px;
 }
 .section h2{
-  margin:0 0 8px;
+  margin:0 0 2px;
   font-size:24px;
   letter-spacing:-0.2px;
+}
+
+.section-head p{
+  margin:0;
 }
 
 .card, .map-card{
